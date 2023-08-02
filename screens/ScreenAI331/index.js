@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, TextInput, SafeAreaView } from 'react-native';
 
 const Screen = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <View style={styles.section1}>
         <Text style={styles.welcomeText}>Welcome (User's Full Name)</Text>
@@ -13,7 +15,9 @@ const Screen = () => {
           /* Add notification icon here */
         }
         </TouchableOpacity>
-        <TouchableOpacity style={styles.locationButton}>
+        <TouchableOpacity style={styles.locationButton} onPress={() => {
+        navigation.navigate("ScreenAI10");
+      }}>
           <Text style={styles.locationButtonText}>Set location</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.logoutButton}>
@@ -44,16 +48,22 @@ const Screen = () => {
           <Text style={styles.serviceDescription}>Description</Text>
           <Text style={styles.serviceDescription}>Price per hour</Text>
           <Text style={styles.serviceDescription}>Price per day</Text>
-          <TouchableOpacity style={styles.selectServiceButton}>
+          <TouchableOpacity style={styles.selectServiceButton} onPress={() => {
+          navigation.navigate("ScreenAI16");
+        }}>
             <Text style={styles.selectServiceButtonText}>Select Specific service</Text>
           </TouchableOpacity>
         </View>
       </View>
       <View style={styles.section5}>
-        <TouchableOpacity style={styles.historyButton}>
+        <TouchableOpacity style={styles.historyButton} onPress={() => {
+        navigation.navigate("ScreenAI14");
+      }}>
           <Text style={styles.historyButtonText}>Request history</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.calendarButton}>
+        <TouchableOpacity style={styles.calendarButton} onPress={() => {
+        navigation.navigate("ScreenAI22");
+      }}>
           <Text style={styles.calendarButtonText}>Calendar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.homeButton}>
