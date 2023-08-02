@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, CheckBox, SafeAreaView } from 'react-native';
 
 const SignUpScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -58,11 +60,15 @@ const SignUpScreen = () => {
         <Text style={styles.buttonText}>Sign up</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => {
+      navigation.navigate("ScreenAI4");
+    }}>
         <Text style={styles.buttonText}>Terms and Conditions</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => {
+      navigation.navigate("ScreenAI3");
+    }}>
         <Text style={styles.buttonText}>Privacy Policy</Text>
       </TouchableOpacity>
     </SafeAreaView>;
